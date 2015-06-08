@@ -18,9 +18,9 @@ class VotedQuerySet(QuerySet):
     if call votes.annotate with an `user` argument then add `is_voted` to each instance
     """
     
-    def __init__(self, model=None, query=None, using=None, user=None, hint=None):
+    def __init__(self, model=None, query=None, using=None, user=None, hints=None):
         self.user = user
-        super(VotedQuerySet, self).__init__(model=model, query=query, using=using, hint=hint)
+        super(VotedQuerySet, self).__init__(model=model, query=query, using=using)
         
     def __iter__(self):
         super(VotedQuerySet, self).__iter__()
